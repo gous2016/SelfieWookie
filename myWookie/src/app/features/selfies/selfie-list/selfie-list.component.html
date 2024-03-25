@@ -1,0 +1,12 @@
+
+<div class="text-center">
+  <div class="col">
+     <button  class="btn btn-success" type="button" (click)="demandeAjoutSelfie()">Ajouter un selfie</button>
+  </div>
+</div> <br>
+
+<app-add-selfie *ngIf="selfieAAjouter" [selfieARenseigner]="selfieAAjouter" (annulerAjouter)="cacheZoneAjoutSelfie()"> </app-add-selfie><br>
+
+<app-un-selfie-readonly [unSelfie] = "selfie" *ngFor="let selfie of lesSelfies"></app-un-selfie-readonly>
+
+

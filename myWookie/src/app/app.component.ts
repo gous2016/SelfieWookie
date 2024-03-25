@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoggerService } from './shared/services/logger.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'myWookie';
+ title = 'Selfie à wookie';
+
+ valeurARecherche = '';
+
+ constructor(private loggerService : LoggerService){
+
+ }
+
+ rechercherSelfies(valeur : string){
+  this.loggerService.log('AppComponent', valeur);
+  this.valeurARecherche = valeur;
+ }
+
+
 }
